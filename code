@@ -1,0 +1,37 @@
+#include <stdio.h>
+int main() {
+    int x,y,i,j,m,n,a,b,minimum;
+    int max=0;
+    printf("Enter the number of rows of matrix: ");
+    scanf("%d",&x);
+    printf("Enter the number of columns of matrix: ");
+    scanf("%d",&y);
+    int arr[x][y];
+    for(i=0;i<x;i++){
+        for(j=0;j<y;j++){
+            printf("Enter the element of %d row and %d column: ",i+1,j+1);
+            scanf("%d",&arr[i][j]);
+        }
+    }
+    for(i=0;i<x;i++){
+        for(j=0;j<y;j++){
+            if(arr[i][j]>max){
+                max=arr[i][j];
+                a=i;
+                b=j;
+            }
+        }
+    }
+    int min=max;
+    for(i=0;i<x;i++){
+        for(j=0;j<y;j++){
+            if(arr[i][j]<min){
+                min=arr[i][j];
+                m=i;
+                n=j;
+            }
+        }
+    }
+    printf("Maximum element is %d in %d row and %d column while minimum element is %d in %d row and %d column",max,a+1,b+1,min,m+1,n+1);
+    return 0;
+}
